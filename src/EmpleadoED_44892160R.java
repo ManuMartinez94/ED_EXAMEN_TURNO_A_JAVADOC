@@ -1,14 +1,31 @@
 
-package empleadoED_44892160R;
-import java.util.*;
-public class EmpleadoED_44892160RX {
+/**
+ * 
+ * @author Manuel Martínez Parreño DNI 44892160R
+ * @author <a href="manumony1@gmail.com> manumony1@gmail.com </a>
+ * @version 2.5.8
+ *
+ */
+public class EmpleadoED_44892160R {
 	 static final double FACTOR_HORA_EXTRA = 1.2;
 	 private String nombreCompleto, dni;
 	 private double salarioBasePorHora = 10.56;
+	 /**
+	  * Constructor con tres parámetros
+	  * 
+	  * @param nombreCompleto nombre completo en mayúsculas
+	  * @param dni documento nacional de identidad con letra y sin espacio
+	  */
 	 public EmpleadoED_44892160R(String nombreCompleto, String dni) {
 	 this.nombreCompleto = nombreCompleto;
 	 this.dni = dni;
 	 }
+	 /**
+	  * Calcula el salario bruto mensual en función del salario base por hora y las horas extras
+	  * El precio por hora de la hora exacta se determina con la constante FACTOR_HORA_EXTRA
+	  * @param horasExtra número de horas extra dedicadas redondeado a la baja (entero)
+	  * @return devuelve el salario bruto mensual en euros con dos decimales
+	  */
 	 public double getSalarioEsteMes(int horasExtra) {
 	 double cantidadExtra, salarioFinal;
 	 cantidadExtra = horasExtra * this.salarioBasePorHora *
@@ -21,11 +38,10 @@ public class EmpleadoED_44892160RX {
 	 // Este método no lo comentaremos con JavaDoc
 	 public static void main(String[] args) {
 	 // !!!! MODIFICA TU NOMBRE Y TU DNI EN LA SIGUIENTE LÍNEA
-	 EmpleadoED_44654545X emp = new EmpleadoED_44654545X("SERGIO BADAL",
-	"44654545X");
+	 EmpleadoED_44892160R emp = new EmpleadoED_44892160R("MANUEL MARTÍNEZ",
+	"44892160R");
 	 int horasExtra = 2;
-	 System.out.println("El salario de " + emp.nombreCompleto + " este mes
-	será de " + emp.getSalarioEsteMes(horasExtra)
+	 System.out.println("El salario de " + emp.nombreCompleto + "este mes será de " + emp.getSalarioEsteMes(horasExtra)
 	 + " euros, al hacer " + horasExtra + " horas extra.");
 	 }
 	}
